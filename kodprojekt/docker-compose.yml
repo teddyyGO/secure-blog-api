@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: blog-mongo
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:27017:27017'   # bara åtkomlig från den egna datorn
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
